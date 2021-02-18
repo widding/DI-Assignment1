@@ -6,6 +6,6 @@ Link to live demo: https://widding.github.io/DI-Assignment1/
 ## Tools
 
 - Microsoft Teams
-- Miro
+- [Miro](https://miro.com)
 - Figma
 - GitHub Projects
