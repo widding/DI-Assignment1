@@ -5,7 +5,7 @@ Link to live demo: https://widding.github.io/DI-Assignment1/
 
 ## Tools
 
-- Microsoft Teams
+- [Microsoft Teams](https://teams.microsoft.com)
 - [Miro](https://miro.com)
-- Figma
-- GitHub Projects
+- [Figma](https://www.figma.com/files/team/944258014434597729/Designing-Interactions)
+- [GitHub Projects](https://github.com/widding/DI-Assignment1/projects)
