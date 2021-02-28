@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <title>Post Stats</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Stats page</h1>
+        <a href="index.html" class="button button__back">Go Back</a>
+    </div>
+
+    <script>
+        let likedComments = localStorage.getItem('likedComments')
+        likedComments = JSON.parse(likedComments)
+
+        let dislikedComments = localStorage.getItem('dislikedComments')
+        dislikedComments = JSON.parse(dislikedComments)
+        
+        let superLikedComments = localStorage.getItem('superLikedComments')
+        superLikedComments = JSON.parse(superLikedComments)
+
+        let superDislikedComments = localStorage.getItem('superDislikedComments')
+        superDislikedComments = JSON.parse(superDislikedComments)
+        
+        if(likedComments) console.info("Liked: ", likedComments.length)
+        if(dislikedComments) console.info("Disliked: ", dislikedComments.length)
+        if(superLikedComments) console.info("Super liked: ", superLikedComments.length)
+        if(superDislikedComments) console.info("Super disliked: ", superDislikedComments.length)
+    </script>
+    <script src="js/script_stats.js"></script>
+</body>
+</html>
