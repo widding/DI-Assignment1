@@ -10,32 +10,40 @@
     <title>Assignment 1 - Designing Interactions</title>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 </head>
-<body>
+<body id="body--index">
     <div id="wrapper">
-        <h1>Hello World</h1>
         <a href="stats.html" class="button button__stats">Go to stats</a>
-        <button type="button" onclick="clearReactions()" class="button">Clear reactions</button>
-
-        <ol class="comments__wrapper">
-            <li id="comment--1" class="draggable">
-                <p>1. This is a comment</p>
-            </li>
-            <li id="comment--2" class="draggable">
-                <p>2. This is a comment</p>
-            </li>
-            <li id="comment--3" class="draggable">
-                <p>3. This is a comment</p>
-            </li>
-            <li id="comment--4" class="draggable">
-                <p>4. This is a comment</p>
-            </li>
-        </ol>
-        <div class="dropzones__wrapper">
-            <div id="like-dropzone" class="dropzone"></div>
-            <div id="dislike-dropzone" class="dropzone"></div>
-            <div id="superLike-dropzone" class="dropzone"></div>
-            <div id="superDislike-dropzone" class="dropzone"></div>
+        <button type="button" onclick="clearReactions()" class="button button__clear">Clear reactions</button>
+        <div class="post__section">
+            <article>
+                <span style="background-color: lightgrey; width: 250px; height: 250px; display: block"></span>
+                <p>Post description</p>
+            </article>
         </div>
+
+        <div class="comment__section">
+            <ol class="comments__wrapper">
+                <li id="comment--1" class="draggable">
+                    <p>1. This is a comment</p>
+                </li>
+                <li id="comment--2" class="draggable">
+                    <p>2. This is a comment</p>
+                </li>
+                <li id="comment--3" class="draggable">
+                    <p>3. This is a comment</p>
+                </li>
+                <li id="comment--4" class="draggable">
+                    <p>4. This is a comment</p>
+                </li>
+            </ol>
+            <div class="dropzones__wrapper">
+                <div id="like-dropzone" class="dropzone"></div>
+                <div id="dislike-dropzone" class="dropzone"></div>
+                <div id="superLike-dropzone" class="dropzone"></div>
+                <div id="superDislike-dropzone" class="dropzone"></div>
+            </div>
+        </div>
+        
     </div>
     <script src="js/script.js"></script>
 </body>

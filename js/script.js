@@ -5,10 +5,18 @@ let position = { x: 0, y: 0 }
 
 // Arrays that store ID's of comments we have reacted to.
 // These are stored in LocalStorage, so we can fetch the amount of each on /stats.html.
-let likedComments = []
-let dislikedComments = []
-let superLikedComments = []
-let superDislikedComments = [];
+
+let likedComments = localStorage.getItem('likedComments')
+likedComments = JSON.parse(likedComments) || []
+
+let dislikedComments = localStorage.getItem('dislikedComments')
+dislikedComments = JSON.parse(dislikedComments) || []
+
+let superLikedComments = localStorage.getItem('superLikedComments')
+superLikedComments = JSON.parse(superLikedComments) || []
+
+let superDislikedComments = localStorage.getItem('superDislikedComments')
+superDislikedComments = JSON.parse(superDislikedComments) || []
 
 // Helper function that takes a comment element, and disables it 
 // + resets position, so we can drag the others.
@@ -49,6 +57,10 @@ let storeReaction = (comment, reaction) => {
 // Mainly used for debugging and demo'ing
 let clearReactions = () => {
     localStorage.clear();
+    likedComments = []
+    dislikedComments = []
+    superLikedComments = []
+    superDislikedComments = []
 }
 
 // Function InteractJS that makes any element with class 'draggable' into a draggable element.
