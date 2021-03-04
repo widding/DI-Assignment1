@@ -14,11 +14,46 @@
     <div id="wrapper">
         <button type="button" onclick="clearReactions()" class="button button__clear">Clear reactions</button>
         <div class="post__section">
-            <article>
-                <span style="background-color: lightgrey; width: 250px; height: 250px; display: block"></span>
-                <p>Post description</p>
-                <button onclick="showDrawer()">Go to comments</button>
-            </article>
+            <div class="post-author">
+                <div class="post-author-avatar">
+                    <img src="images/face-04.jpg" alt="">
+                </div>
+                <div class="post-author-name">robertlouis</div>
+                <div class="post-author-menu">
+                    <img src="images/genericons/menu.svg" alt="">
+                </div>
+            </div>
+            <div class="post-image">
+                <img src="images/post-01.jpg" alt="">
+            </div>
+            <div class="post-actions">
+                <div class="post-actions-like"><img src="images/genericons/heart.svg" alt=""></div>
+                <div class="post-actions-comment"><img src="images/genericons/comment.svg" alt=""></div>
+                <div class="post-actions-share"><img src="images/genericons/share.svg" alt=""></div>
+                <button onclick="showDrawer()" class="post-actions-feedback"><img src="images/genericons/star-half.svg" alt=""></button>
+                <div class="post-actions-bookmark"><img src="images/genericons/book.svg" alt=""></div>
+            </div>
+            <div class="post-meta">
+                <span class="post-meta-avatars">
+                    <span class="post-meta-avatar-image"><img src="images/face-01.jpg" alt=""></span>
+                    <span class="post-meta-avatar-image"><img src="images/face-02.jpg" alt=""></span>
+                    <span class="post-meta-avatar-image"><img src="images/face-03.jpg" alt=""></span>
+                </span>
+                Liked by&nbsp;
+                <span class="post-meta-name">drjekyll83</span>
+                &nbsp;and&nbsp;
+                <span class="post-meta-others">37 others</span>
+            </div>
+            <div class="post-comments">
+                <div class="post-comments-comment">
+                    <span class="post-comment-author">@drjekyll83</span>
+                    <span class="post-comment-content">disco em plena sexta-feira de pandemia. 🤘</span>
+                </div>
+                <div class="post-comments-comment">
+                    <span class="post-comment-author">@hydeinshadows</span>
+                    <span class="post-comment-content">infantilidade alienada do breganejo e abundam...</span>
+                </div>
+            </div>
         </div>
 
         <div class="comment__section comment__section--hidden">
