@@ -295,8 +295,7 @@ h1{
     flex-direction: row;
     align-items: center;
     width: auto;
-    height: 48px;
-    margin: 0 0 12px;
+    margin: 0 0 24px;
     padding: 0 12px;
 }
 
@@ -326,9 +325,9 @@ h1{
     flex-direction: row;
     align-items: center;
     width: auto;
-    margin: 0 0 12px;
+    margin: 0 0 24px;
     padding: 0 12px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .post-meta-avatars {
@@ -362,6 +361,7 @@ h1{
     width: auto;
     margin: 0 0 12px;
     padding: 0 12px;
+    font-size: 0.9rem;
 }
 
 .post-comments-comment {
