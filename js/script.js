@@ -1,6 +1,10 @@
 
     console.log("Hello World")
 
+    let showDrawer = () => {
+        document.querySelector('.comment__section').classList.toggle('comment__section--hidden')
+    }
+
     // Position of currently dragged item, needs restting after drop off.
     let position = { x: 0, y: 0 }
 
@@ -27,6 +31,8 @@
         comment.remove('draggable')
         position = { x: 0, y: 0 }
     }
+
+    const dropzonesWrapper = document.querySelector('.dropzones__wrapper')
 
 
     // Function that takes a comment element, and a reaction to it.
@@ -69,15 +75,26 @@
     listeners: {
         start (event) {
         //console.log(event.type, event.target)
+            event.target.classList.add("comment--dragging")
+            dropzonesWrapper.classList.remove('dropzones--hidden')
+            let remainingComments = [...document.querySelectorAll('.comment:not(.comment--dragging)')]
+            remainingComments.map((comment, index) => {
+                comment.classList.add('comment--hidden')
+            })
         },
         move (event) {
-        position.x += event.dx
-        position.y += event.dy
+            position.x += event.dx
+            position.y += event.dy
 
-        event.target.style.transform =
-            `translate(${position.x}px, ${position.y}px)`
+            event.target.style.transform = `translate(${position.x}px, ${position.y}px)`
         },
         end (event) {
+            event.target.classList.remove("comment--dragging")
+            dropzonesWrapper.classList.add('dropzones--hidden')
+            let remainingComments = [...document.querySelectorAll('.comment:not(.comment--dragging)')]
+            remainingComments.map((comment, index) => {
+                comment.classList.remove('comment--hidden')
+            })
             //console.log(event.type, event.target)
         }
     }
@@ -91,11 +108,23 @@
     // In this case, we run disableComment() on the dropped comment, and stores the reaction with storeReaction.
     interact(dislikeDropzone)
     .dropzone({
+        overlap: 0.75,
         ondrop: function (event) {
-        console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
-        disableComment(event.relatedTarget)
-        storeReaction(event.relatedTarget, 'dislike')
-        }
+            console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
+            disableComment(event.relatedTarget)
+            storeReaction(event.relatedTarget, 'dislike')
+            event.target.classList.remove('drop-target')
+        },
+        ondragenter: function (event) {
+            var dropzoneElement = event.target
+        
+            // feedback the possibility of a drop
+            dropzoneElement.classList.add('drop-target')
+          },
+          ondragleave: function (event) {
+            // remove the drop feedback style
+            event.target.classList.remove('drop-target')
+          },
     })
 
 
@@ -103,29 +132,65 @@
     const superDislikeDropzone = document.getElementById('superDislike-dropzone')
     interact(superDislikeDropzone)
     .dropzone({
+        overlap: 0.75,
         ondrop: function (event) {
             console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
             disableComment(event.relatedTarget)
             storeReaction(event.relatedTarget, 'superDislike')
-        }
+            event.target.classList.remove('drop-target')
+        },
+        ondragenter: function (event) {
+            var dropzoneElement = event.target
+        
+            // feedback the possibility of a drop
+            dropzoneElement.classList.add('drop-target')
+          },
+          ondragleave: function (event) {
+            // remove the drop feedback style
+            event.target.classList.remove('drop-target')
+          },
     })
 
     const superLikeDropzone = document.getElementById('superLike-dropzone')
     interact(superLikeDropzone)
         .dropzone({
+        overlap: 0.75,
         ondrop: function (event) {
             console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
             disableComment(event.relatedTarget)
             storeReaction(event.relatedTarget, 'superLike')
-        }
+            event.target.classList.remove('drop-target')
+        },
+        ondragenter: function (event) {
+            var dropzoneElement = event.target
+        
+            // feedback the possibility of a drop
+            dropzoneElement.classList.add('drop-target')
+          },
+          ondragleave: function (event) {
+            // remove the drop feedback style
+            event.target.classList.remove('drop-target')
+          },
     })
 
     const likeDropzone = document.getElementById('like-dropzone')
     interact(likeDropzone)
         .dropzone({
+        overlap: 0.75,
         ondrop: function (event) {
             console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
             disableComment(event.relatedTarget)
             storeReaction(event.relatedTarget, 'like')
-        }
+            event.target.classList.remove('drop-target')
+        },
+        ondragenter: function (event) {
+            var dropzoneElement = event.target
+        
+            // feedback the possibility of a drop
+            dropzoneElement.classList.add('drop-target')
+          },
+          ondragleave: function (event) {
+            // remove the drop feedback style
+            event.target.classList.remove('drop-target')
+          },
     })

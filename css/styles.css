@@ -2,6 +2,10 @@ html, body, #wrapper {
     touch-action: none; /* disable zoom and other gestures on mobile */
 }
 
+body{
+    overflow-y: hidden;
+}
+
 h1{
     font-family: sans-serif;
     font-weight: bold;
@@ -32,8 +36,11 @@ h1{
     background-color: black;
 }
 
-.button__stats{
+.button__stats {
     left: 0;
+    border-radius: 100px;
+    position: relative;
+    padding: 1rem 2rem;
 }
 
 .button__clear{
@@ -61,6 +68,13 @@ h1{
     width: 100%;
     height: 55%;
     position: relative;
+    transition: 300ms ease-in;
+    box-shadow: 0px -7px 6px rgba(0,0,0,0.2);
+    border-radius: 20px 20px 0 0;
+}
+
+.comment__section--hidden{
+    transform: translateY(100%);
 }
 
 .comments__wrapper{
@@ -75,7 +89,7 @@ h1{
     bottom: 50%;
 }
 
-.comments__wrapper li{
+.comment{
     position: absolute;
     font-family: sans-serif;
     font-size: 1.25rem;
@@ -84,18 +98,63 @@ h1{
     background-color: white;
     box-shadow: 1px 3px 6px rgba(0,0,0,0.1);
     z-index: 1;
-    width: 20ch;
+    width: 40ch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 200ms ease-in, border-radius 200ms ease-in, width 200ms ease-in, transform 200ms, opacity 200ms;
 }
 
-.comments__wrapper li:first-of-type{
+.comment--last{
+    width: fit-content;
+    border-radius: 20px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.comment:first-of-type{
     z-index: 2;
+}
+
+.comment--dragging{
+    background-color: transparent;
+    border-radius: 100%;
+    width: 73px;
+    height: 73px;
+    padding: 0;
+    transition: transform 0ms;
+}
+
+.comment--hidden{
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.comment--dragging p{
+    opacity: 0;
+    width: 0px;
+    height: 0px;
 }
 
 .dropzones__wrapper{
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 768px;
+    height: 768px;
     display: block;
+    overflow: hidden;
+    transition: opacity 200ms ease-in;
+}
+
+.dropzones--hidden{
+    opacity: 0;
+}
+
+
+.dropzones__rotator{
+    transform: rotate(45deg) scale(1.5);
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
 }
 
 .dropzone{
@@ -103,31 +162,36 @@ h1{
     position: absolute;
     width: 50%;
     height: 50%;
-    background-color: var(--dropzoneColor)
+    background: var(--dropzoneColor);
+    transition: 0.2s;
+}
+
+.drop-target{
+    filter: brightness(80%)
 }
 
 #like-dropzone{
     left: 0;
     top: 0;
-    --dropzoneColor: darkGreen;
+    --dropzoneColor: linear-gradient(45deg, #F7C773 0%, #F8B27E 100%);
 }
 
 #dislike-dropzone{
     right: 0;
     top: 0;
-    --dropzoneColor: maroon;
+    --dropzoneColor: linear-gradient(90deg, #FD8980 0%, #D45E70 102.43%);
 }
 
 #superLike-dropzone{
     bottom: 0;
     left: 0;
-    --dropzoneColor: blue;
+    --dropzoneColor: linear-gradient(180deg, #52C1EB 0%, #6D8DD5 100%);
 }
 
 #superDislike-dropzone{
     bottom: 0;
     right: 0;
-    --dropzoneColor: yellow;
+    --dropzoneColor: linear-gradient(270deg, #53F6CF 0%, #4CEA8D 100%);
 }
 
 #body--stats li{
