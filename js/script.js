@@ -1,8 +1,13 @@
 
     console.log("Hello World")
 
+    const dropzonesWrapper = document.querySelector('.dropzones__wrapper')
+    const postSection = document.querySelector('.post__section')
+    const commentSection = document.querySelector('.comment__section')
+
     let showDrawer = () => {
-        document.querySelector('.comment__section').classList.toggle('comment__section--hidden')
+        commentSection.classList.toggle('comment__section--hidden')
+        postSection.classList.toggle('post__section--smaller')
     }
 
     // Position of currently dragged item, needs restting after drop off.
@@ -31,9 +36,6 @@
         comment.remove('draggable')
         position = { x: 0, y: 0 }
     }
-
-    const dropzonesWrapper = document.querySelector('.dropzones__wrapper')
-
 
     // Function that takes a comment element, and a reaction to it.
     // The switch statement handles which array/localstorage object we store the comment ID in
