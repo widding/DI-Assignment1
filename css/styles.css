@@ -95,13 +95,14 @@ h1{
 .comment{
     position: absolute;
     font-family: sans-serif;
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding: 2rem;
     display: flex;
     background-color: white;
     box-shadow: 1px 3px 6px rgba(0,0,0,0.1);
     z-index: 1;
-    width: 80%;
+    width: 60%;
+    border-radius: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -146,10 +147,10 @@ h1{
     min-height: 300px;
     display: block;
     overflow: hidden;
-    transition: opacity 200ms ease-in;
+    background-color: white;
 }
 
-.dropzones--hidden{
+.dropzones--hidden .dropzones__rotator{
     opacity: 0;
 }
 
@@ -159,6 +160,7 @@ h1{
     margin: 0 auto;
     height: 100%;
     width: 100%;
+    transition: opacity 200ms ease-in;
 }
 
 .dropzone{
