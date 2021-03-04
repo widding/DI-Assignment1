@@ -114,6 +114,10 @@ h1{
     transition: background-color 200ms ease-in, border-radius 200ms ease-in, width 200ms ease-in, transform 200ms, opacity 200ms;
 }
 
+.comment *{
+    pointer-events: none;
+}
+
 .comment--last{
     width: fit-content;
     border-radius: 20px;
@@ -126,12 +130,11 @@ h1{
 }
 
 .comment--dragging{
-    background-color: transparent;
     border-radius: 100%;
     width: 73px;
     height: 73px;
     padding: 0;
-    transition: transform 0ms;
+    transition: background-color 200ms ease-in, border-radius 200ms ease-in, width 200ms ease-in, transform 0ms, opacity 200ms;
 }
 
 .comment--hidden{
