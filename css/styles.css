@@ -229,7 +229,7 @@ h1{
 }
 
 /* post */
-.post-author {
+.post__author {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -237,7 +237,7 @@ h1{
     padding: 0 12px;
 }
 
-.post-author-avatar {
+.post__author__avatar {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -249,26 +249,26 @@ h1{
     overflow: hidden;
 }
 
-.post-author-avatar img {
+.post__author__avatar img {
     width: 100%;
     height: auto;
 }
 
-.post-author-name {
+.post__author__name {
     flex-grow: 1;
     font-weight: 600;
 }
 
-.post-author-menu {
+.post__author__menu {
     flex-grow: 0;
 }
 
-.post-author-menu img {
+.post__author__menu img {
     width: 16px;
     height: 16px;
 }
 
-.post-image {
+.post__image {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -279,12 +279,12 @@ h1{
     overflow: hidden;
 }
 
-.post-image img {
+.post__image img {
     width: 100%;
     height: auto;
 }
 
-.post-actions {
+.post__actions {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -293,28 +293,28 @@ h1{
     padding: 0 12px;
 }
 
-.post-actions-like,
-.post-actions-comment,
-.post-actions-share,
-.post-actions-feedback,
-.post-actions-bookmark {
+.post__actions__like,
+.post__actions__comment,
+.post__actions__share,
+.post__actions__feedback,
+.post__actions__bookmark {
     margin-right: 12px;
 }
 
-.post-actions-like img,
-.post-actions-comment img,
-.post-actions-share img,
-.post-actions-feedback img,
-.post-actions-bookmark img {
+.post__actions__like img,
+.post__actions__comment img,
+.post__actions__share img,
+.post__actions__feedback img,
+.post__actions__bookmark img {
     width: 24px;
     height: 24px;
 }
 
-.post-actions-bookmark {
+.post__actions__bookmark {
     margin-left: auto;
 }
 
-.post-meta {
+.post__meta {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -324,14 +324,14 @@ h1{
     font-size: 0.8rem;
 }
 
-.post-meta-avatars {
+.post__meta__avatars {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-right: 8px;
 }
 
-.post-meta-avatar-image {
+.post__meta__avatar__image {
     width: 16px;
     height: 16px;
     margin-right: -4px;
@@ -340,17 +340,17 @@ h1{
     overflow: hidden;
 }
 
-.post-meta-avatar-image img {
+.post__meta__avatar__image img {
     width: 100%;
     height: auto;
 }
 
-.post-meta-name,
-.post-meta-others {
+.post__meta__name,
+.post__meta__others {
     font-weight: 600;
 }
 
-.post-comments {
+.post__comments {
     display: block;
     width: auto;
     margin: 0 0 12px;
@@ -358,14 +358,14 @@ h1{
     font-size: 0.9rem;
 }
 
-.post-comments-comment {
+.post__comments__single {
     display: block;
     margin: 0 0 12px;
 }
 
-.post-comment-author {
+.post__comments__single__author {
     font-weight: 600;
 }
 
-.post-comment-content {
+.post__comments__single__content {
 }
