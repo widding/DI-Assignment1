@@ -196,12 +196,11 @@ h1 {
     /*display: none;*/
 }
 
-.dropzones--hidden .dropzones__rotator {
-    /*opacity: 0;*/
+.dropzones--hidden .dropzones__container {
+    opacity: 0;
 }
 
-.dropzones__rotator {
-    /*transform: rotate(45deg) scale(1.5);*/
+.dropzones__container {
     margin: 0 auto;
     height: 100%;
     width: 100%;
