@@ -50,9 +50,11 @@ h1{
 
 .post__section{
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
     flex-direction: column;
     transition: height 200ms ease-in;
+    font-size: 1.0rem;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 .post__section--smaller{
@@ -227,15 +229,6 @@ h1{
 }
 
 /* post */
-.post {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    font-size: 1.0rem;
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-}
-
 .post-author {
     display: flex;
     flex-direction: row;

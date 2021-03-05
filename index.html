@@ -11,84 +11,87 @@
     <script src="js/interact.min.js"></script>
 </head>
 <body id="body--index">
-    <div id="wrapper">
-        <button type="button" onclick="clearReactions()" class="button button__clear">Clear reactions</button>
-        <div class="post__section">
-            <div class="post-author">
-                <div class="post-author-avatar">
-                    <img src="images/face-04.jpg" alt="">
-                </div>
-                <div class="post-author-name">robertlouis</div>
-                <div class="post-author-menu">
-                    <img src="images/genericons/menu.svg" alt="">
-                </div>
+<div id="wrapper">
+    <button type="button" onclick="clearReactions()" class="button button__clear">Clear reactions</button>
+    <!-- post -->
+    <div class="post__section">
+        <div class="post-author">
+            <div class="post-author-avatar">
+                <img src="images/face-04.jpg" alt="">
             </div>
-            <div class="post-image">
-                <img src="images/post-01.jpg" alt="">
+            <div class="post-author-name">robertlouis</div>
+            <div class="post-author-menu">
+                <img src="images/genericons/menu.svg" alt="">
             </div>
-            <div class="post-actions">
-                <div class="post-actions-like"><img src="images/genericons/heart.svg" alt=""></div>
-                <div class="post-actions-comment"><img src="images/genericons/comment.svg" alt=""></div>
-                <div class="post-actions-share"><img src="images/genericons/share.svg" alt=""></div>
-                <button onclick="showDrawer()" class="post-actions-feedback"><img src="images/genericons/star-half.svg" alt=""></button>
-                <div class="post-actions-bookmark"><img src="images/genericons/book.svg" alt=""></div>
-            </div>
-            <div class="post-meta">
+        </div>
+        <div class="post-image">
+            <img src="images/post-01.jpg" alt="">
+        </div>
+        <div class="post-actions">
+            <div class="post-actions-like"><img src="images/genericons/heart.svg" alt=""></div>
+            <div class="post-actions-comment"><img src="images/genericons/comment.svg" alt=""></div>
+            <div class="post-actions-share"><img src="images/genericons/share.svg" alt=""></div>
+            <button onclick="showDrawer()" class="post-actions-feedback">
+                <img src="images/genericons/star-half.svg" alt=""></button>
+            <div class="post-actions-bookmark"><img src="images/genericons/book.svg" alt=""></div>
+        </div>
+        <div class="post-meta">
                 <span class="post-meta-avatars">
                     <span class="post-meta-avatar-image"><img src="images/face-01.jpg" alt=""></span>
                     <span class="post-meta-avatar-image"><img src="images/face-02.jpg" alt=""></span>
                     <span class="post-meta-avatar-image"><img src="images/face-03.jpg" alt=""></span>
                 </span>
-                Liked by&nbsp;
-                <span class="post-meta-name">drjekyll83</span>
-                &nbsp;and&nbsp;
-                <span class="post-meta-others">37 others</span>
+            Liked by&nbsp;
+            <span class="post-meta-name">drjekyll83</span>
+            &nbsp;and&nbsp;
+            <span class="post-meta-others">37 others</span>
+        </div>
+        <div class="post-comments">
+            <div class="post-comments-comment">
+                <span class="post-comment-author">@drjekyll83</span>
+                <span class="post-comment-content">disco em plena sexta-feira de pandemia. 🤘</span>
             </div>
-            <div class="post-comments">
-                <div class="post-comments-comment">
-                    <span class="post-comment-author">@drjekyll83</span>
-                    <span class="post-comment-content">disco em plena sexta-feira de pandemia. 🤘</span>
-                </div>
-                <div class="post-comments-comment">
-                    <span class="post-comment-author">@hydeinshadows</span>
-                    <span class="post-comment-content">infantilidade alienada do breganejo e abundam...</span>
-                </div>
+            <div class="post-comments-comment">
+                <span class="post-comment-author">@hydeinshadows</span>
+                <span class="post-comment-content">infantilidade alienada do breganejo e abundam...</span>
             </div>
         </div>
-
-        <div class="comment__section comment__section--hidden">
-            <ol class="comments__wrapper">
-                <li id="comment--1" class="comment draggable" style="z-index: 5">
-                    <img src="https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Sunglasses&hairColor=PastelPink&facialHairType=BeardMagestic&facialHairColor=BrownDark&clotheType=Hoodie&clotheColor=Gray01&eyeType=EyeRoll&eyebrowType=UpDownNatural&mouthType=Serious&skinColor=Black" style="display: block; height: 73px; width: 73px; border-radius: 100%;"></img>
-                    <p>Lorem 😂😂 ipsum ️‍♂️dolor sit️ amet, consectetur adipiscing😇😇🤙</p>
-                </li>
-                <li id="comment--2" class="comment draggable" style="z-index: 4">
-                    <img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairBob&accessoriesType=Prescription01&hairColor=Black&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Brown" style="display: block; height: 73px; width: 73px; border-radius: 100%;"></img>
-                    <p>Lorem 😂😂 ipsum ️‍♂️dolor sit️ amet, consectetur adipiscing😇😇🤙</p>
-                </li>
-                <li id="comment--3" class="comment draggable" style="z-index: 3">
-                    <img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairShavedSides&accessoriesType=Prescription01&facialHairType=BeardMagestic&facialHairColor=Brown&clotheType=ShirtCrewNeck&clotheColor=Heather&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Tongue&skinColor=Tanned'" style="display: block; height: 73px; width: 73px; border-radius: 100%;"></img>
-                    <p>Lorem 😂😂 ipsum ️‍♂️dolor sit️ amet, consectetur adipiscing😇😇🤙</p>
-                </li>
-                <li id="comment--4" class="comment draggable"" style="z-index: 2">
-                    <img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairFrida&accessoriesType=Round&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Surprised&eyebrowType=FlatNatural&mouthType=Disbelief&skinColor=Pale" style="display: block; height: 73px; width: 73px; border-radius: 100%;"></img>
-                    <p>Lorem 😂😂 ipsum ️‍♂️dolor sit️ amet, consectetur adipiscing😇😇🤙</p>
-                </li>
-                <li id="comment--5" class="comment comment--last" style="z-index: 1">
-                    <a href="stats.html" class="button button__stats">Go to stats</a>
-                </li>
-            </ol>
-            <div class="dropzones__wrapper dropzones--hidden">
-                <div class="dropzones__rotator">
-                    <div id="like-dropzone" class="dropzone"></div>
-                    <div id="dislike-dropzone" class="dropzone"></div>
-                    <div id="superLike-dropzone" class="dropzone"></div>
-                    <div id="superDislike-dropzone" class="dropzone"></div>
-                </div>
-            </div>
-        </div>
-        
     </div>
-    <script defer src="js/script.js"></script>
+    <!-- hidden comments -->
+    <div class="comment__section comment__section--hidden">
+        <ol class="comments__wrapper">
+            <li id="comment--1" class="comment draggable" style="z-index: 5">
+                <img src="https://avataaars.io/?avatarStyle=Circle&topType=NoHair&accessoriesType=Sunglasses&hairColor=PastelPink&facialHairType=BeardMagestic&facialHairColor=BrownDark&clotheType=Hoodie&clotheColor=Gray01&eyeType=EyeRoll&eyebrowType=UpDownNatural&mouthType=Serious&skinColor=Black" style="display: block; height: 73px; width: 73px; border-radius: 100%;"></img>
+                <p>Lorem 😂😂 ipsum ️‍♂️dolor sit️ amet, consectetur adipiscing😇😇🤙</p>
+            </li>
+            <li id="comment--2" class="comment draggable" style="z-index: 4">
+                <img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairBob&accessoriesType=Prescription01&hairColor=Black&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=RaisedExcited&mouthType=Grimace&skinColor=Brown" style="display: block; height: 73px; width: 73px; border-radius: 100%;"></img>
+                <p>Lorem 😂😂 ipsum ️‍♂️dolor sit️ amet, consectetur adipiscing😇😇🤙</p>
+            </li>
+            <li id="comment--3" class="comment draggable" style="z-index: 3">
+                <img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairShavedSides&accessoriesType=Prescription01&facialHairType=BeardMagestic&facialHairColor=Brown&clotheType=ShirtCrewNeck&clotheColor=Heather&eyeType=Wink&eyebrowType=RaisedExcited&mouthType=Tongue&skinColor=Tanned'" style="display: block; height: 73px; width: 73px; border-radius: 100%;"></img>
+                <p>Lorem 😂😂 ipsum ️‍♂️dolor sit️ amet, consectetur adipiscing😇😇🤙</p>
+            </li>
+            <li id="comment--4" class="comment draggable"
+            " style="z-index: 2">
+            <img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairFrida&accessoriesType=Round&facialHairType=Blank&clotheType=BlazerSweater&eyeType=Surprised&eyebrowType=FlatNatural&mouthType=Disbelief&skinColor=Pale" style="display: block; height: 73px; width: 73px; border-radius: 100%;"></img>
+            <p>Lorem 😂😂 ipsum ️‍♂️dolor sit️ amet, consectetur adipiscing😇😇🤙</p>
+            </li>
+            <li id="comment--5" class="comment comment--last" style="z-index: 1">
+                <a href="stats.html" class="button button__stats">Go to stats</a>
+            </li>
+        </ol>
+        <div class="dropzones__wrapper dropzones--hidden">
+            <div class="dropzones__rotator">
+                <div id="like-dropzone" class="dropzone"></div>
+                <div id="dislike-dropzone" class="dropzone"></div>
+                <div id="superLike-dropzone" class="dropzone"></div>
+                <div id="superDislike-dropzone" class="dropzone"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script defer src="js/script.js"></script>
 </body>
 </html>
