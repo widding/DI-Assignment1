@@ -52,9 +52,9 @@ h1 {
 
 .post__section {
     position: relative;
-    z-index: -1;
     display: flex;
     flex-direction: column;
+    height: calc(100% - 48px);
     padding: 24px 0;
     background-color: #fff;
     font-size: 1.0rem;
@@ -62,6 +62,7 @@ h1 {
     border-radius: 0;
     transform: scale(1, 1);
     transition: all 350ms cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: -1;
 }
 
 .post__section--smaller {
