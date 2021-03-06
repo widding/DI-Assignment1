@@ -1,4 +1,5 @@
 :root {
+    --comment-avatar-size: 128px;
     --dropzone-up--top: #F7C773;
     --dropzone-up--bottom: #F8B27E;
     --dropzone-right--top: #FD8980;
@@ -101,54 +102,91 @@ h1 {
     border-radius: 20px 20px 0 0;
     overflow: hidden;
     bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .comment__section--hidden {
     bottom: calc(-65vh - 10px);
 }
 
+#comment__section__handle {
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 4px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background-color: #000;
+    opacity: 0.4;
+    top: 12px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
 .comments__wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    right: 50%;
-    bottom: 50%;
+    align-items: flex-start;
+    flex-grow: 1;
+    position: relative;
     width: 100%;
-    transform: translate(-50%, -50%);
-    height: 200px;
     z-index: 1;
 }
 
 .comment {
     position: absolute;
-    font-family: sans-serif;
-    font-size: 1rem;
-    padding: 2rem;
     display: flex;
-    background-color: white;
-    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    width: 60%;
-    border-radius: 20px;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    background-color: #fff;
+    /*box-shadow: 1px 0 6px rgba(0, 0, 0, 0.1);*/
+    z-index: 1;
+    width: auto;
+    height: 100%;
+    padding: 40px 40px 0;
+    border-radius: 20px;
     transition: background-color 350ms cubic-bezier(0.25, 1, 0.5, 1), border-radius 350ms cubic-bezier(0.25, 1, 0.5, 1), width 350ms cubic-bezier(0.25, 1, 0.5, 1), transform 350ms, opacity 350ms;
 }
 
-.comment img, .comment p {
+.comment__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60vw;
+    min-height: 200px;
+}
+
+.comment__inner {
     pointer-events: none;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently
-                                     supported by Chrome, Edge, Opera and Firefox */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.comment--avatar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: var(--comment-avatar-size);
+    height: var(--comment-avatar-size);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 28px;
+}
+
+.comment--avatar img {
+    width: 100%;
+    height: auto;
+}
+
+.comment p {
+    margin-bottom: 12px;
 }
 
 .comment--last {
@@ -164,9 +202,10 @@ h1 {
 }
 
 .comment--dragging {
-    border-radius: 100%;
-    width: 73px;
-    height: 73px;
+    border-radius: 50%;
+    width: var(--comment-avatar-size);
+    height: var(--comment-avatar-size);
+    overflow: hidden;
     padding: 0;
     transition: background-color 350ms cubic-bezier(0.25, 1, 0.5, 1), border-radius 350ms cubic-bezier(0.25, 1, 0.5, 1), width 350ms cubic-bezier(0.25, 1, 0.5, 1), transform 0ms, opacity 350ms;
 }
@@ -183,10 +222,10 @@ h1 {
 }
 
 .dropzones__wrapper {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
-    min-height: 300px;
+    /*min-height: 300px;*/
     display: block;
     overflow: hidden;
     background-color: white;
