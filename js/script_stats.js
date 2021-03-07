@@ -14,30 +14,43 @@ let blueComments = localStorage.getItem('blueComments')
 blueComments = JSON.parse(blueComments) || []
 let blueReactions = blueComments.length;
 
-if(greenReactions) console.info("Green: ", greenReactions); document.getElementById('likedAmount').innerHTML = greenReactions
-if(redReactions) console.info("Red: ", redReactions); document.getElementById('dislikedAmount').innerHTML = redReactions
-if(yellowReactions) console.info("Yellow: ", yellowReactions); document.getElementById('superLikedAmount').innerHTML = yellowReactions
-if(blueReactions) console.info("Blue: ",blueReactions); document.getElementById('superDislikedAmount').innerHTML = blueReactions
+function clamp(num, min, max) {
+    return num <= min ? min : num >= max ? max : num;
+  }
+
+let prevSize = [];
 
 let sizeBox = (reactions, color, reactionsTotal) => {
-    console.info('Sizing ', color, ' box')
-    let boxSize = reactionsTotal < 10 ? (reactions * 3) + 50 : (100 - (reactions * 5))
-    let boxZ = 1;
+    let boxSize = 15;
+    let zIndex = reactions;
+    if(reactions !== 0){
+        boxSize = (reactions / reactionsTotal * 100)
+    }
     let box = document.getElementById(color)
-    if(reactions > 2) boxZ = 2;
-    if(reactions > 5) boxZ = 3;
-    if(reactions > 7) boxZ = 4;
     if(reactions == 0) box.style.background = "rgb(255,255,255)";
 
     
-    box.style.width = boxSize + '%';
-    box.style.height = boxSize + '%';
-    box.style.zIndex = boxZ;
+    box.style.minWidth = boxSize + '%';
+    box.style.minHeight = boxSize + '%';
+    box.style.maxWidth = 100 - boxSize + '%';
+    box.style.maxHeight = 100 - boxSize + '%';
+
+    box.style.width = '100%'
+    box.style.height = '100%'
+
+    box.style.zIndex = zIndex;
 }
 
 let reactionsTotal = greenReactions + yellowReactions + blueReactions + redReactions
 
+console.info("Green :", greenReactions, "/", reactionsTotal, " = ", (greenReactions / reactionsTotal) * 100 + "%")
+console.info("Blue :", blueReactions, "/", reactionsTotal, " = ", (blueReactions / reactionsTotal) * 100 + "%")
+console.info("Yellow :", yellowReactions, "/", reactionsTotal, " = ", (yellowReactions / reactionsTotal) * 100 + "%")
+console.info("Red :", redReactions, "/", reactionsTotal, " = ", (redReactions / reactionsTotal) * 100 + "%")
+
+
 sizeBox(greenReactions, "green", reactionsTotal);
-sizeBox(yellowReactions, "yellow", reactionsTotal);
 sizeBox(blueReactions, "blue", reactionsTotal);
+
+sizeBox(yellowReactions, "yellow", reactionsTotal);
 sizeBox(redReactions, "red", reactionsTotal);
