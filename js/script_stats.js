@@ -19,9 +19,9 @@ if(redReactions) console.info("Red: ", redReactions); document.getElementById('d
 if(yellowReactions) console.info("Yellow: ", yellowReactions); document.getElementById('superLikedAmount').innerHTML = yellowReactions
 if(blueReactions) console.info("Blue: ",blueReactions); document.getElementById('superDislikedAmount').innerHTML = blueReactions
 
-let sizeBox = (reactions, color) => {
+let sizeBox = (reactions, color, reactionsTotal) => {
     console.info('Sizing ', color, ' box')
-    let boxSize = reactions < 10 ? (reactions * 5) + 50 : reactions * 5
+    let boxSize = reactionsTotal < 10 ? (reactions * 3) + 50 : (100 - (reactions * 5))
     let boxZ = 1;
     let box = document.getElementById(color)
     if(reactions > 2) boxZ = 2;
@@ -35,8 +35,9 @@ let sizeBox = (reactions, color) => {
     box.style.zIndex = boxZ;
 }
 
+let reactionsTotal = greenReactions + yellowReactions + blueReactions + redReactions
 
-sizeBox(greenReactions, "green");
-sizeBox(yellowReactions, "yellow");
-sizeBox(blueReactions, "blue");
-sizeBox(redReactions, "red");
+sizeBox(greenReactions, "green", reactionsTotal);
+sizeBox(yellowReactions, "yellow", reactionsTotal);
+sizeBox(blueReactions, "blue", reactionsTotal);
+sizeBox(redReactions, "red", reactionsTotal);
