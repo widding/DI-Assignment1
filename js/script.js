@@ -107,7 +107,7 @@ const dislikeDropzone = document.getElementById('dislike-dropzone')
 // In this case, we run disableComment() on the dropped comment, and stores the reaction with storeReaction.
 interact(dislikeDropzone)
     .dropzone({
-    overlap: 1,
+    overlap: 0.75,
     ondrop: function (event) {
         console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
         disableComment(event.relatedTarget)
@@ -131,7 +131,7 @@ interact(dislikeDropzone)
 const superDislikeDropzone = document.getElementById('superDislike-dropzone')
 interact(superDislikeDropzone)
     .dropzone({
-    overlap: 1,
+    overlap: 0.75,
     ondrop: function (event) {
         console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
         disableComment(event.relatedTarget)
@@ -153,7 +153,7 @@ interact(superDislikeDropzone)
 const superLikeDropzone = document.getElementById('superLike-dropzone')
 interact(superLikeDropzone)
     .dropzone({
-    overlap: 1,
+    overlap: 0.75,
     ondrop: function (event) {
         console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
         disableComment(event.relatedTarget)
@@ -175,7 +175,7 @@ interact(superLikeDropzone)
 const likeDropzone = document.getElementById('like-dropzone')
 interact(likeDropzone)
     .dropzone({
-    overlap: 1,
+    overlap: 0.75,
     ondrop: function (event) {
         console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
         disableComment(event.relatedTarget)
