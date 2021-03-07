@@ -259,28 +259,28 @@ h1 {
     filter: brightness(80%)
 }
 
-#like-dropzone {
+#yellow-dropzone {
     left: 0;
     top: 0;
     /*--dropzoneColor: linear-gradient(45deg, #F7C773 0%, #F8B27E 100%);*/
     background-color: transparent;
 }
 
-#dislike-dropzone {
+#red-dropzone {
     right: 0;
     top: 0;
     /*--dropzoneColor: linear-gradient(90deg, #FD8980 0%, #D45E70 102.43%);*/
     background-color: transparent;
 }
 
-#superLike-dropzone {
+#blue-dropzone {
     bottom: 0;
     left: 0;
     /*--dropzoneColor: linear-gradient(180deg, #52C1EB 0%, #6D8DD5 100%);*/
     background-color: transparent;
 }
 
-#superDislike-dropzone {
+#green-dropzone {
     bottom: 0;
     right: 0;
     /*--dropzoneColor: linear-gradient(270deg, #53F6CF 0%, #4CEA8D 100%);*/
@@ -520,22 +520,68 @@ h1 {
     position: relative;
 }
 
-.like-canvas {
+.yellow-canvas {
     clip-path: polygon(50% 100%, 0 0, 100% 0);
     background: linear-gradient(0deg, var(--dropzone-up--top), var(--dropzone-up--bottom));
 }
 
-.dislike-canvas {
+.red-canvas {
     clip-path: polygon(0 50%, 100% 0, 100% 100%);
     background: linear-gradient(0deg, var(--dropzone-right--top), var(--dropzone-right--bottom));
 }
 
-.superlike-canvas {
+.blue-canvas {
     clip-path: polygon(0 100%, 0 0, 100% 50%);
     background: linear-gradient(0deg, var(--dropzone-left--top), var(--dropzone-left--bottom));
 }
 
-.superdislike-canvas {
+.green-canvas {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     background: linear-gradient(0deg, var(--dropzone-down--top), var(--dropzone-down--bottom));
+}
+
+
+.reactionBox{
+    position: absolute;
+    display: block;
+}
+
+.reactionBox#green{
+    z-index: 0;
+    left: 0;
+    top: 0;
+    
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(0deg, var(--dropzone-down--top), var(--dropzone-down--bottom));
+}
+
+.reactionBox#blue{
+    z-index: 0;
+    right: 0;
+    top: 0;
+    
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(0deg, var(--dropzone-left--top), var(--dropzone-left--bottom));
+}
+
+.reactionBox#red{
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(0deg, var(--dropzone-right--top), var(--dropzone-right--bottom));
+}
+
+.reactionBox#yellow{
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(0deg, var(--dropzone-up--top), var(--dropzone-up--bottom));
 }

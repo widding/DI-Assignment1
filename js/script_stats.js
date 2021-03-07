@@ -1,20 +1,42 @@
-let likedComments = localStorage.getItem('likedComments')
-likedComments = JSON.parse(likedComments) || []
-let likes = likedComments.length
+let greenComments = localStorage.getItem('greenComments')
+greenComments = JSON.parse(greenComments) || []
+let greenReactions = greenComments.length
 
-let dislikedComments = localStorage.getItem('dislikedComments')
-dislikedComments = JSON.parse(dislikedComments) || []
-let dislikes = dislikedComments.length
+let redComments = localStorage.getItem('redComments')
+redComments = JSON.parse(redComments) || []
+let redReactions = redComments.length
 
-let superLikedComments = localStorage.getItem('superLikedComments')
-superLikedComments = JSON.parse(superLikedComments) || []
-let superLikes = superLikedComments.length;
+let yellowComments = localStorage.getItem('yellowComments')
+yellowComments = JSON.parse(yellowComments) || []
+let yellowReactions = yellowComments.length;
 
-let superDislikedComments = localStorage.getItem('superDislikedComments')
-superDislikedComments = JSON.parse(superDislikedComments) || []
-let superDislikes = superDislikedComments.length;
+let blueComments = localStorage.getItem('blueComments')
+blueComments = JSON.parse(blueComments) || []
+let blueReactions = blueComments.length;
 
-if(likes) console.info("Liked: ", likes); document.getElementById('likedAmount').innerHTML = likes
-if(dislikes) console.info("Disliked: ", dislikes); document.getElementById('dislikedAmount').innerHTML = dislikes
-if(superLikes) console.info("Super liked: ", superLikes); document.getElementById('superLikedAmount').innerHTML = superLikes
-if(superDislikes) console.info("Super disliked: ",superDislikes); document.getElementById('superDislikedAmount').innerHTML = superDislikes
+if(greenReactions) console.info("Green: ", greenReactions); document.getElementById('likedAmount').innerHTML = greenReactions
+if(redReactions) console.info("Red: ", redReactions); document.getElementById('dislikedAmount').innerHTML = redReactions
+if(yellowReactions) console.info("Yellow: ", yellowReactions); document.getElementById('superLikedAmount').innerHTML = yellowReactions
+if(blueReactions) console.info("Blue: ",blueReactions); document.getElementById('superDislikedAmount').innerHTML = blueReactions
+
+let sizeBox = (reactions, color) => {
+    console.info('Sizing ', color, ' box')
+    let boxSize = (reactions * 5) + 50;
+    let boxZ = 1;
+    let box = document.getElementById(color)
+    if(reactions > 2) boxZ = 2;
+    if(reactions > 5) boxZ = 3;
+    if(reactions > 7) boxZ = 4;
+    if(reactions == 0) box.style.background = "rgb(255,255,255)";
+
+    
+    box.style.width = boxSize + '%';
+    box.style.height = boxSize + '%';
+    box.style.zIndex = boxZ;
+}
+
+
+sizeBox(greenReactions, "green");
+sizeBox(yellowReactions, "yellow");
+sizeBox(blueReactions, "blue");
+sizeBox(redReactions, "red");

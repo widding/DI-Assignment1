@@ -13,17 +13,17 @@ let position = { x: 0, y: 0 }
 // Arrays that store ID's of comments we have reacted to.
 // These are stored in LocalStorage, so we can fetch the amount of each on /stats.html.
 
-let likedComments = localStorage.getItem('likedComments')
-likedComments = JSON.parse(likedComments) || []
+let greenComments = localStorage.getItem('greenComments')
+greenComments = JSON.parse(greenComments) || []
 
-let dislikedComments = localStorage.getItem('dislikedComments')
-dislikedComments = JSON.parse(dislikedComments) || []
+let redComments = localStorage.getItem('redComments')
+redComments = JSON.parse(redComments) || []
 
-let superLikedComments = localStorage.getItem('superLikedComments')
-superLikedComments = JSON.parse(superLikedComments) || []
+let yellowComments = localStorage.getItem('yellowComments')
+yellowComments = JSON.parse(yellowComments) || []
 
-let superDislikedComments = localStorage.getItem('superDislikedComments')
-superDislikedComments = JSON.parse(superDislikedComments) || []
+let blueComments = localStorage.getItem('blueComments')
+blueComments = JSON.parse(blueComments) || []
 
 // Helper function that takes a comment element, and disables it
 // + resets position, so we can drag the others.
@@ -38,22 +38,22 @@ let disableComment = (comment) => {
 // The switch statement handles which array/localstorage object we store the comment ID in
 let storeReaction = (comment, reaction) => {
     switch(reaction){
-        case "like":
-            likedComments.push(comment.id)
-            localStorage.setItem('likedComments', JSON.stringify(likedComments));
-            console.info(likedComments)
+        case "green":
+            greenComments.push(comment.id)
+            localStorage.setItem('greenComments', JSON.stringify(greenComments));
+            console.info(greenComments)
             break;
-        case "dislike":
-            dislikedComments.push(comment.id)
-            localStorage.setItem('dislikedComments', JSON.stringify(dislikedComments));
+        case "red":
+            redComments.push(comment.id)
+            localStorage.setItem('redComments', JSON.stringify(redComments));
             break;
-        case "superDislike":
-            superDislikedComments.push(comment.id)
-            localStorage.setItem('superDislikedComments', JSON.stringify(superDislikedComments));
+        case "blue":
+            blueComments.push(comment.id)
+            localStorage.setItem('blueComments', JSON.stringify(blueComments));
             break;
-        case "superLike":
-            superLikedComments.push(comment.id)
-            localStorage.setItem('superLikedComments', JSON.stringify(superLikedComments));
+        case "yellow":
+            yellowComments.push(comment.id)
+            localStorage.setItem('yellowComments', JSON.stringify(yellowComments));
             break;
     }
 }
@@ -63,10 +63,10 @@ let storeReaction = (comment, reaction) => {
 // Mainly used for debugging and demo'ing
 let clearReactions = () => {
     localStorage.clear();
-    likedComments = []
-    dislikedComments = []
-    superLikedComments = []
-    superDislikedComments = []
+    greenComments = []
+    redComments = []
+    yellowComments = []
+    blueComments = []
 }
 
 // Function InteractJS that makes any element with class 'draggable' into a draggable element.
@@ -101,7 +101,7 @@ interact('.draggable').draggable({
 
 // Dislike zone
 // First, we define the element which acts as our Dropzone, where we can drop comments into.
-const dislikeDropzone = document.getElementById('dislike-dropzone')
+const dislikeDropzone = document.getElementById('red-dropzone')
 
 // InteractJS logic that handles the drop event.
 // In this case, we run disableComment() on the dropped comment, and stores the reaction with storeReaction.
@@ -111,7 +111,7 @@ interact(dislikeDropzone)
     ondrop: function (event) {
         console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
         disableComment(event.relatedTarget)
-        storeReaction(event.relatedTarget, 'dislike')
+        storeReaction(event.relatedTarget, 'red')
         event.target.classList.remove('drop-target')
     },
     ondragenter: function (event) {
@@ -128,14 +128,14 @@ interact(dislikeDropzone)
 
 
 // The following code is identitical to the above.
-const superDislikeDropzone = document.getElementById('superDislike-dropzone')
+const superDislikeDropzone = document.getElementById('green-dropzone')
 interact(superDislikeDropzone)
     .dropzone({
     overlap: 0.75,
     ondrop: function (event) {
         console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
         disableComment(event.relatedTarget)
-        storeReaction(event.relatedTarget, 'superDislike')
+        storeReaction(event.relatedTarget, 'green')
         event.target.classList.remove('drop-target')
     },
     ondragenter: function (event) {
@@ -150,14 +150,14 @@ interact(superDislikeDropzone)
       },
 })
 
-const superLikeDropzone = document.getElementById('superLike-dropzone')
+const superLikeDropzone = document.getElementById('blue-dropzone')
 interact(superLikeDropzone)
     .dropzone({
     overlap: 0.75,
     ondrop: function (event) {
         console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
         disableComment(event.relatedTarget)
-        storeReaction(event.relatedTarget, 'superLike')
+        storeReaction(event.relatedTarget, 'blue')
         event.target.classList.remove('drop-target')
     },
     ondragenter: function (event) {
@@ -172,14 +172,14 @@ interact(superLikeDropzone)
       },
 })
 
-const likeDropzone = document.getElementById('like-dropzone')
+const likeDropzone = document.getElementById('yellow-dropzone')
 interact(likeDropzone)
     .dropzone({
     overlap: 0.75,
     ondrop: function (event) {
         console.info(event.relatedTarget.id + ' was dropped into ' + event.target.id)
         disableComment(event.relatedTarget)
-        storeReaction(event.relatedTarget, 'like')
+        storeReaction(event.relatedTarget, 'yellow')
         event.target.classList.remove('drop-target')
     },
     ondragenter: function (event) {
