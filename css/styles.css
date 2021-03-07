@@ -544,6 +544,7 @@ h1 {
 .reactionBox{
     position: absolute;
     display: block;
+    transition: width 250ms ease-in-out, height 250ms ease-in-out;
 }
 
 .reactionBox#green{
