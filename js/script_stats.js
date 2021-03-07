@@ -21,7 +21,7 @@ if(blueReactions) console.info("Blue: ",blueReactions); document.getElementById(
 
 let sizeBox = (reactions, color) => {
     console.info('Sizing ', color, ' box')
-    let boxSize = (reactions * 5) + 50;
+    let boxSize = reactions < 10 ? (reactions * 5) + 50 : reactions * 5
     let boxZ = 1;
     let box = document.getElementById(color)
     if(reactions > 2) boxZ = 2;
