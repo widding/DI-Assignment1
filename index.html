@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Assignment 1 - Designing Interactions</title>
     <script src="js/interact.min.js"></script>
+    <script src="js/canvas-demo.js"></script>
 </head>
 <body id="body--index">
 <div id="wrapper">
@@ -107,6 +108,7 @@
                 -->
 
                 <div id="dropzone__up-container">
+                    <!--
                     <svg id="like-dropzone" class="dropzone" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                         <linearGradient x1="0" y1="0" x2="0" y2="100%" id="gradient-up">
                             <stop class="dropzone-gradient-up--top" offset="0"/>
@@ -114,9 +116,12 @@
                         </linearGradient>
                         <path d="M0,0L50,100L100,0L0,0Z" fill="url(#gradient-up)" />
                     </svg>
+                    -->
+                    <canvas id="like-dropzone" class="dropzone like-canvas"></canvas>
                 </div>
 
                 <div id="dropzone__right-container">
+                    <!--
                     <svg id="dislike-dropzone" class="dropzone" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                         <linearGradient x1="0" y1="0" x2="0" y2="100%" id="gradient-right">
                             <stop class="dropzone-gradient-right--top" offset="0"/>
@@ -124,9 +129,12 @@
                         </linearGradient>
                         <path d="M0,50L100,100L100,0L0,50Z" fill="url(#gradient-right)" />
                     </svg>
+                    -->
+                    <canvas id="dislike-dropzone" class="dropzone dislike-canvas"></canvas>
                 </div>
 
                 <div id="dropzone__down-container">
+                    <!--
                     <svg id="superDislike-dropzone" class="dropzone" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                         <linearGradient x1="0" y1="0" x2="0" y2="100%" id="gradient-down">
                             <stop class="dropzone-gradient-down--top" offset="0"/>
@@ -134,9 +142,12 @@
                         </linearGradient>
                         <path d="M0,100L100,100L50,0L0,100Z" fill="url(#gradient-down)" />
                     </svg>
+                    -->
+                    <canvas id="superDislike-dropzone" class="dropzone superdislike-canvas"></canvas>
                 </div>
 
                 <div id="dropzone__left-container">
+                    <!--
                     <svg id="superLike-dropzone" class="dropzone" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                         <linearGradient x1="0" y1="0" x2="0" y2="100%" id="gradient-left">
                             <stop class="dropzone-gradient-left--top" offset="0"/>
@@ -144,6 +155,8 @@
                         </linearGradient>
                         <path d="M0,100L100,50L0,0L0,100Z" fill="url(#gradient-left)" />
                     </svg>
+                    -->
+                    <canvas id="superLike-dropzone" class="dropzone superlike-canvas"></canvas>
                 </div>
             </div>
         </div>

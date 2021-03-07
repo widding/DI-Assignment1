@@ -108,7 +108,7 @@ h1 {
     flex-direction: column;
     align-items: center;
 
-    -webkit-mask-image: -webkit-radial-gradient(white, black); /* safari overflow fix */
+    -webkit-mask-image: -webkit-radial-gradient(white, white); /* safari overflow fix */
 }
 
 .comment__section--hidden {
@@ -166,7 +166,6 @@ h1 {
     pointer-events: none;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
@@ -328,6 +327,7 @@ h1 {
 }
 
 /* svg gradients */
+/*
 .dropzone-gradient-up--top {
     stop-color: var(--dropzone-up--top);
 }
@@ -359,6 +359,7 @@ h1 {
 .dropzone-gradient-down--bottom {
     stop-color: var(--dropzone-down--bottom);
 }
+*/
 
 #body--stats li {
     margin: 1rem 0;
@@ -510,4 +511,34 @@ h1 {
 }
 
 .post__comments__single__content {
+}
+
+/* dropzone canvas masking */
+.like-canvas,
+.dislike-canvas,
+.superlike-canvas,
+.superdislike-canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.like-canvas {
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    background: linear-gradient(0deg, var(--dropzone-up--top), var(--dropzone-up--bottom));
+}
+
+.dislike-canvas {
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    background: linear-gradient(0deg, var(--dropzone-right--top), var(--dropzone-right--bottom));
+}
+
+.superlike-canvas {
+    clip-path: polygon(0 100%, 0 0, 100% 50%);
+    background: linear-gradient(0deg, var(--dropzone-left--top), var(--dropzone-left--bottom));
+}
+
+.superdislike-canvas {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: linear-gradient(0deg, var(--dropzone-down--top), var(--dropzone-down--bottom));
 }
